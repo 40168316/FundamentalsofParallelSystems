@@ -1,0 +1,198 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 393584 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:390), pid=8672, tid=0x0000000000000cc8
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_102-b14) (build 1.8.0_102-b14)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.102-b14 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000001d3f8000):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=3272, stack(0x000000001e540000,0x000000001e640000)]
+
+Stack: [0x000000001e540000,0x000000001e640000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:    525  689       4       org.codehaus.groovy.runtime.metaclass.MetaMethodIndex::addMethodToList (290 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000001d56a800 JavaThread "org.jcsp.plugNplay.ProcessRead@686fe75a" daemon [_thread_new, id=8424, stack(0x0000000000000000,0x0000000000000000)]
+  0x000000001d56a000 JavaThread "org.jcsp.groovy.plugAndPlay.GPCopy@4da9c9b9" daemon [_thread_blocked, id=8936, stack(0x0000000021780000,0x0000000021880000)]
+  0x00000000205a1800 JavaThread "org.jcsp.groovy.plugAndPlay.GPrefix@3ea0af" daemon [_thread_blocked, id=1428, stack(0x0000000021670000,0x0000000021770000)]
+  0x000000001fb67000 JavaThread "org.jcsp.plugNplay.ProcessWrite@54db10a9" daemon [_thread_blocked, id=9212, stack(0x000000001ec70000,0x000000001ed70000)]
+  0x000000001faf0800 JavaThread "org.jcsp.groovy.plugAndPlay.GPCopy@489bb3c" daemon [_thread_blocked, id=9644, stack(0x0000000020360000,0x0000000020460000)]
+  0x000000001f8db800 JavaThread "org.jcsp.groovy.plugAndPlay.GPrefix@4c48be8e" daemon [_thread_blocked, id=8008, stack(0x000000001f110000,0x000000001f210000)]
+  0x000000001fb21800 JavaThread "c3.Differentiate@fcd6521" daemon [_thread_blocked, id=8348, stack(0x00000000201b0000,0x00000000202b0000)]
+  0x000000001fb21000 JavaThread "org.jcsp.groovy.plugAndPlay.GIntegrate@319b92f3" daemon [_thread_blocked, id=4736, stack(0x0000000020040000,0x0000000020140000)]
+  0x000000001f7ae000 JavaThread "org.jcsp.groovy.plugAndPlay.GNumbers@2f0a87b3" daemon [_thread_blocked, id=7664, stack(0x000000001fe00000,0x000000001ff00000)]
+  0x000000001d48a000 JavaThread "Service Thread" daemon [_thread_blocked, id=9880, stack(0x000000001f260000,0x000000001f360000)]
+  0x000000001d461800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=10036, stack(0x000000001eed0000,0x000000001efd0000)]
+  0x000000001d406000 JavaThread "C2 CompilerThread2" daemon [_thread_in_native, id=10040, stack(0x000000001f010000,0x000000001f110000)]
+  0x000000001d3ff000 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=9604, stack(0x000000001ed70000,0x000000001ee70000)]
+=>0x000000001d3f8000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=3272, stack(0x000000001e540000,0x000000001e640000)]
+  0x000000001d3f1800 JavaThread "Attach Listener" daemon [_thread_blocked, id=10176, stack(0x000000001eb70000,0x000000001ec70000)]
+  0x000000001d3f0800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=7312, stack(0x000000001ea30000,0x000000001eb30000)]
+  0x000000001c33d800 JavaThread "Finalizer" daemon [_thread_blocked, id=7200, stack(0x000000001e800000,0x000000001e900000)]
+  0x000000001c336800 JavaThread "Reference Handler" daemon [_thread_blocked, id=2236, stack(0x000000001e650000,0x000000001e750000)]
+  0x0000000001e5f000 JavaThread "main" [_thread_blocked, id=9184, stack(0x0000000002200000,0x0000000002300000)]
+
+Other Threads:
+  0x000000001d3a2800 VMThread [stack: 0x000000001e3d0000,0x000000001e4d0000] [id=7680]
+  0x000000001d4a4800 WatcherThread [stack: 0x000000001f420000,0x000000001f520000] [id=7492]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 76288K, used 36093K [0x000000076af80000, 0x0000000770480000, 0x00000007c0000000)
+  eden space 65536K, 55% used [0x000000076af80000,0x000000076d2bf4d8,0x000000076ef80000)
+  from space 10752K, 0% used [0x000000076fa00000,0x000000076fa00000,0x0000000770480000)
+  to   space 10752K, 0% used [0x000000076ef80000,0x000000076ef80000,0x000000076fa00000)
+ ParOldGen       total 175104K, used 0K [0x00000006c0e00000, 0x00000006cb900000, 0x000000076af80000)
+  object space 175104K, 0% used [0x00000006c0e00000,0x00000006c0e00000,0x00000006cb900000)
+ Metaspace       used 9254K, capacity 9416K, committed 9600K, reserved 1058816K
+  class space    used 994K, capacity 1026K, committed 1152K, reserved 1048576K
+
+Card table byte_map: [0x0000000011990000,0x0000000012190000] byte_map_base: 0x000000000e389000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000587ca6c0
+ Begin Bits: [0x00000000131c0000, 0x0000000017188000)
+ End Bits:   [0x0000000017188000, 0x000000001b150000)
+
+Polling page: 0x0000000000200000
+
+CodeCache: size=245760Kb used=3938Kb max_used=3938Kb free=241821Kb
+ bounds [0x00000000025d0000, 0x00000000029b0000, 0x00000000115d0000]
+ total_blobs=1261 nmethods=745 adapters=429
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.502 Thread 0x000000001d461800  745       3       org.codehaus.groovy.runtime.MethodRankHelper::caselessCompare (17 bytes)
+Event: 0.502 Thread 0x000000001d461800 nmethod 745 0x00000000029a7890 code [0x00000000029a7a40, 0x00000000029a7f58]
+Event: 0.502 Thread 0x000000001d461800  746       3       java.lang.CharacterDataLatin1::getPropertiesEx (11 bytes)
+Event: 0.502 Thread 0x000000001d461800 nmethod 746 0x00000000029a74d0 code [0x00000000029a7620, 0x00000000029a77b0]
+Event: 0.502 Thread 0x000000001d461800  748       3       sun.nio.cs.SingleByte$Encoder::encode (32 bytes)
+Event: 0.502 Thread 0x000000001d461800 nmethod 748 0x00000000029aa350 code [0x00000000029aa4c0, 0x00000000029aa6d0]
+Event: 0.502 Thread 0x000000001d461800  747       1       java.nio.Buffer::position (5 bytes)
+Event: 0.502 Thread 0x000000001d461800 nmethod 747 0x00000000029a7210 code [0x00000000029a7360, 0x00000000029a7470]
+Event: 0.502 Thread 0x000000001d461800  749       1       java.nio.Buffer::limit (5 bytes)
+Event: 0.502 Thread 0x000000001d461800 nmethod 749 0x00000000029aa810 code [0x00000000029aa960, 0x00000000029aaa70]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (5 events):
+Event: 0.143 Thread 0x0000000001e5f000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000281e2a8 method=java.io.BufferedInputStream.read()I @ 8
+Event: 0.208 Thread 0x0000000001e5f000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002835e20 method=java.lang.String.indexOf([CII[CIII)I @ 3
+Event: 0.263 Thread 0x0000000001e5f000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002852968 method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 62
+Event: 0.263 Thread 0x0000000001e5f000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000284acc0 method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 62
+Event: 0.422 Thread 0x0000000001e5f000 Uncommon trap: reason=range_check action=make_not_entrant pc=0x000000000295b268 method=sun.reflect.generics.parser.SignatureParser.current()C @ 34
+
+Internal exceptions (10 events):
+Event: 0.470 Thread 0x000000001fb21000 Exception <a 'java/lang/ClassNotFoundException': org/jcsp/groovy/plugAndPlay/GPlusBeanInfo> (0x000000076cdc45c0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u102\7268\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.471 Thread 0x000000001fb21000 Exception <a 'java/lang/ClassNotFoundException': org/jcsp/groovy/plugAndPlay/GPlusCustomizer> (0x000000076cdcd208) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u102\7268\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.473 Thread 0x000000001fb21000 Exception <a 'java/lang/ClassNotFoundException': org/jcsp/plugNplay/ProcessReadBeanInfo> (0x000000076cdf2b68) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u102\7268\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.473 Thread 0x000000001fb21000 Exception <a 'java/lang/ClassNotFoundException': org/jcsp/plugNplay/ProcessReadCustomizer> (0x000000076cdfb550) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u102\7268\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.495 Thread 0x000000001fb21800 Exception <a 'java/lang/ClassNotFoundException': c3/MinusBeanInfo> (0x000000076cb2e258) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u102\7268\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.496 Thread 0x000000001fb21800 Exception <a 'java/lang/ClassNotFoundException': c3/MinusCustomizer> (0x000000076cb35040) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u102\7268\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.497 Thread 0x000000001fb21800 Exception <a 'java/lang/ClassNotFoundException': org/jcsp/lang/CSProcessBeanInfo> (0x000000076cb58240) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u102\7268\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.498 Thread 0x000000001fb21800 Exception <a 'java/lang/ClassNotFoundException': org/jcsp/lang/CSProcessCustomizer> (0x000000076cb60180) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u102\7268\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.498 Thread 0x000000001fb21800 Exception <a 'java/lang/ClassNotFoundException': groovy/lang/GroovyObjectBeanInfo> (0x000000076cb74600) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u102\7268\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.499 Thread 0x000000001fb21800 Exception <a 'java/lang/ClassNotFoundException': groovy/lang/GroovyObjectCustomizer> (0x000000076cb7c570) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u102\7268\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+
+Events (10 events):
+Event: 0.499 loading class java/lang/Throwable$WrappedPrintStream
+Event: 0.500 loading class java/lang/Throwable$PrintStreamOrWriter
+Event: 0.500 loading class java/lang/Throwable$PrintStreamOrWriter done
+Event: 0.500 loading class java/lang/Throwable$WrappedPrintStream done
+Event: 0.500 loading class java/util/IdentityHashMap$KeySet
+Event: 0.500 loading class java/util/IdentityHashMap$KeySet done
+Event: 0.500 loading class org/codehaus/groovy/runtime/MethodRankHelper
+Event: 0.500 loading class org/codehaus/groovy/runtime/MethodRankHelper done
+Event: 0.501 loading class org/codehaus/groovy/runtime/MethodRankHelper$RankableField
+Event: 0.501 loading class org/codehaus/groovy/runtime/MethodRankHelper$RankableField done
+
+
+Dynamic libraries:
+0x000000013fb20000 - 0x000000013fb57000 	C:\Program Files\Java\jre1.8.0_102\bin\javaw.exe
+0x0000000077c10000 - 0x0000000077dba000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x0000000077af0000 - 0x0000000077c0f000 	C:\WINDOWS\system32\kernel32.dll
+0x000007fefdc80000 - 0x000007fefdcea000 	C:\WINDOWS\system32\KERNELBASE.dll
+0x000007feffb20000 - 0x000007feffbfb000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x000007fefe9c0000 - 0x000007fefea5f000 	C:\WINDOWS\system32\msvcrt.dll
+0x000007feffc30000 - 0x000007feffc4f000 	C:\WINDOWS\SYSTEM32\sechost.dll
+0x000007fefea60000 - 0x000007fefeb8d000 	C:\WINDOWS\system32\RPCRT4.dll
+0x00000000779f0000 - 0x0000000077aea000 	C:\WINDOWS\system32\USER32.dll
+0x000007fefe350000 - 0x000007fefe3b7000 	C:\WINDOWS\system32\GDI32.dll
+0x000007feff9a0000 - 0x000007feff9ae000 	C:\WINDOWS\system32\LPK.dll
+0x000007feffa50000 - 0x000007feffb1a000 	C:\WINDOWS\system32\USP10.dll
+0x000007fefbf00000 - 0x000007fefc0f4000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_fa3b1e3d17594757\COMCTL32.dll
+0x000007feff9b0000 - 0x000007feffa21000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x000007feffc00000 - 0x000007feffc2e000 	C:\WINDOWS\system32\IMM32.DLL
+0x000007fefe8a0000 - 0x000007fefe9a9000 	C:\WINDOWS\system32\MSCTF.dll
+0x000000005cce0000 - 0x000000005cdb1000 	C:\Program Files\Java\jre1.8.0_102\bin\msvcr100.dll
+0x0000000057fb0000 - 0x000000005884a000 	C:\Program Files\Java\jre1.8.0_102\bin\server\jvm.dll
+0x000007fef7d00000 - 0x000007fef7d09000 	C:\WINDOWS\system32\WSOCK32.dll
+0x000007fefe300000 - 0x000007fefe34d000 	C:\WINDOWS\system32\WS2_32.dll
+0x000007fefe9b0000 - 0x000007fefe9b8000 	C:\WINDOWS\system32\NSI.dll
+0x000007fef9670000 - 0x000007fef96ab000 	C:\WINDOWS\system32\WINMM.dll
+0x000007fefcb40000 - 0x000007fefcb4c000 	C:\WINDOWS\system32\VERSION.dll
+0x0000000077dd0000 - 0x0000000077dd7000 	C:\WINDOWS\system32\PSAPI.DLL
+0x00000000730b0000 - 0x00000000730bf000 	C:\Program Files\Java\jre1.8.0_102\bin\verify.dll
+0x0000000073080000 - 0x00000000730a9000 	C:\Program Files\Java\jre1.8.0_102\bin\java.dll
+0x0000000073040000 - 0x0000000073056000 	C:\Program Files\Java\jre1.8.0_102\bin\zip.dll
+0x000007fefeb90000 - 0x000007feff91c000 	C:\WINDOWS\system32\SHELL32.dll
+0x000007fefe3c0000 - 0x000007fefe5c3000 	C:\WINDOWS\system32\ole32.dll
+0x000007fefd950000 - 0x000007fefd95f000 	C:\WINDOWS\system32\profapi.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: c3.TestDifferentiate
+java_class_path (initial): C:\Users\40168316\Desktop\ChapterExercises\bin-groovy;C:\eclipse\plugins\org.codehaus.groovy_2.4.3.xx-201608111517-e46\lib\groovy-all-2.4.3.jar;C:\eclipse\plugins\org.codehaus.groovy_2.4.3.xx-201608111517-e46\lib\bsf-2.4.0.jar;C:\eclipse\plugins\org.codehaus.groovy_2.4.3.xx-201608111517-e46\lib\ivy-2.3.0-sources.jar;C:\eclipse\plugins\org.codehaus.groovy_2.4.3.xx-201608111517-e46\lib\ivy-2.3.0.jar;C:\eclipse\plugins\org.codehaus.groovy_2.4.3.xx-201608111517-e46\lib\servlet-api-2.4.jar;C:\Users\40168316\.groovy\greclipse\global_dsld_support;C:\eclipse\plugins\org.codehaus.groovy_2.4.3.xx-201608111517-e46\plugin_dsld_support\;C:\UCaPE-J8-G2.4-14102016\GroovyParallel-Groovy2.4-14102016.jar;C:\Users\40168316\Desktop\ChapterExamples\bin;C:\UCaPE-J8-G2.4-14102016\JCSP-Java8-14102016.jar;C:\Users\40168316\Desktop\UCaPE-J8-G2.4-Lib-Zip-14102016\UCaPE-J8-G2.4-14102016\junit.jar;C:\Users\40168316\Desktop\UCaPE-J8-G2.4-Lib-Zip-14102016\UCaPE-J8-G2.4-14102016\phwclasses.jar;C:\Users\40168316\Desktop\UCaPE-J8-G2.4-Lib-Zip-14102016\UCaPE-J8-G2.4-14102016\JCSP-Java8-14102016.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files/Java/jre1.8.0_102/bin/server;C:/Program Files/Java/jre1.8.0_102/bin;C:/Program Files/Java/jre1.8.0_102/lib/amd64;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\libnvvp;C:\VulkanSDK\1.0.21.1\Bin;C:\Program Files\Oculus\Support\oculus-runtime;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\libnvvp;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\Administrator\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Git\cmd;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Program Files (x86)\MiKTeX 2.9\miktex\bin\;C:\Program Files\CMake\bin;C:\eclipse;
+USERNAME=40168316
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 (6.1.7601.23418)
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 16715612k(10206256k free), swap 16713752k(5304k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.102-b14) for windows-amd64 JRE (1.8.0_102-b14), built on Jun 22 2016 13:15:21 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sat Jan 14 14:28:21 2017
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
