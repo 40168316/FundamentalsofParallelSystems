@@ -24,7 +24,7 @@ class DifferentiateNeg implements CSProcess {
                             		       outChannel1: b.out() ),
                               //insert a constructor for Negator
 							  new Negator(inChannel: c.in(), 
-								          outChannel1 : b.out()),
+								          outChannel : d.out()),
                               new GPlus  ( inChannel0: a.in(), 
                             		       inChannel1: d.in(), 
                             		       outChannel: outChannel ) 

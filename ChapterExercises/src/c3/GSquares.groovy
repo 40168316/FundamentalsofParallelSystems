@@ -14,17 +14,10 @@ class GSquares implements CSProcess {
     One2OneChannel I2P = Channel.createOne2One()
 
     def testList =  [ new GNumbers   ( outChannel: N2I.out() ),
-                      new GIntegrate ( inChannel: N2I.in(), 
-                                       outChannel: I2P.out() ),
-                      // you will need to modify thi twice
-                      //first modification is to insert a constructor for GSPairsA
-					  //new GSPairsA ( inChannel: I2P.in(), outChannel: I2P.out()),
-                      // then run the network using TestGSCopy
-                      //second modification replace the constructor for GSPairsA with GSPairsB
-					  new GSPairsB ( inChannel: I2P.in(), outChannel: I2P.out())
-                      // then run the network again using TestGSCopy
-                      // you will then be able to compare the behaviour and also to
-                      // explain why this happens!
+                      new GIntegrate ( inChannel: N2I.in(), outChannel: I2P.out()),
+                      // you will need to modify this twice
+					  //new GSPairsA(inChannel: I2P.in(), outChannel: outChannel)
+					  new GSPairsB(inChannel: I2P.in(), outChannel: outChannel)
                     ]
     new PAR ( testList ).run()  
   }

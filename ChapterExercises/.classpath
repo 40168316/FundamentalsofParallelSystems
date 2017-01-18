@@ -10,8 +10,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/ChapterExamples"/>
-	<classpathentry kind="lib" path="C:/Users/40168316/Desktop/UCaPE-J8-G2.4-Lib-Zip-14102016/UCaPE-J8-G2.4-14102016/JCSP-Java8-14102016.jar"/>
-	<classpathentry kind="lib" path="C:/Users/40168316/Desktop/UCaPE-J8-G2.4-Lib-Zip-14102016/UCaPE-J8-G2.4-14102016/junit.jar"/>
-	<classpathentry kind="lib" path="C:/Users/40168316/Desktop/UCaPE-J8-G2.4-Lib-Zip-14102016/UCaPE-J8-G2.4-14102016/phwclasses.jar"/>
+	<classpathentry kind="lib" path="C:/UCaPE-J8-G2.4-14102016/JCSP-Java8-14102016.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/UCaPE-J8-G2.4-14102016/JCSPdocs-14102016/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/UCaPE-J8-G2.4-14102016/junit.jar"/>
+	<classpathentry kind="lib" path="C:/UCaPE-J8-G2.4-14102016/phwclasses.jar"/>
 	<classpathentry kind="output" path="bin-groovy"/>
 </classpath>
