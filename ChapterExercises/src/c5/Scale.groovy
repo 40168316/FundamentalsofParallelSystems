@@ -36,17 +36,28 @@ class Scale implements CSProcess {
     while (true) {
       switch ( scaleAlt.priSelect(preCon) ) {
         case SUSPEND :
-          //  deal with suspend input        
+          //  deal with suspend input  
+		  println "Suspend Input is ${scaling}" 
+		  preCon[SUSPEND] = false
+		  preCon[INPUT] = true
           break
         case INJECT:
           //  deal with inject input
+		  println "Inject Input is ${scaling}"
           break
         case TIMER:
           //  deal with Timer input
           println "Normal Timer: new scaling is ${scaling}"
+		  preCon[TIMER] = false
           break
         case INPUT:
           //   deal with Input channel 
+		  def inValue = inChannel.read()
+		  def result = new ScaledData()
+		  result.original = inValue
+		  result.scaled = inValue * scaling
+		  outChannel.write(result)
+		  preCon[INJECT] = true
           break
       } //end-switch
     } //end-while
