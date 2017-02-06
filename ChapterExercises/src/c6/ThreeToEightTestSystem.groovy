@@ -1,7 +1,8 @@
 package c6
 
 import org.jcsp.groovy.PAR
-import org.jcsp.lang.One2OneChannel
+import org.jcsp.lang.ChannelInput;
+import org.jcsp.lang.*
 import groovy.util.GroovyTestCase;
 import c2.*;
 
@@ -12,20 +13,20 @@ void testProcess(){
 	One2OneChannel connect1 = Channel.createOne2One()
 	One2OneChannel connect2 = Channel.createOne2One()
 	// Using CreateSetsOfEight from the process list, input the Inputted sets of 8
-	CreateSetsOfEight InputtedSetsOfEight = new CreateSetsOfEight (inChannel:connect2.in())
+	def InputtedSetsOfEight = new CreateSetsOfEight (inChannel:connect2.in())
 	
 	// Process list
 	def processList = [
-		new GenerateSetsOfThree (outChannel:connect1.out()),
-		new ListToStream(inChannel:connect1.in(), outChannel:connect2.out()),
+		new GenerateSetsOfThree ( outChannel: connect1.out() ),
+        new ListToStream ( inChannel: connect1.in(), outChannel: connect2.out() ),
 		InputtedSetsOfEight
 	]
 	
-	def actual = [17, 18, 19, 20, 21, 22, 23, 24]
-	def expected = InputtedSetsOfEight
 	new PAR (processList).run()
-	// If expected equals actual results then true
-	println actual
-	//assertTrue(expected == actual)
+
+	def expected = [[1, 2, 3, 4, 5, 6, 7, 8], [9, 10, 11, 12, 13, 14, 15, 16], [17, 18, 19, 20, 21, 22, 23, 24]]
+	def actual = InputtedSetsOfEight.outList1
+
+	assertTrue(expected == actual)
 	}
 }
