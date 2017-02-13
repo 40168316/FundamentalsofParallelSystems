@@ -16,12 +16,16 @@ class Client implements CSProcess{
    
   void run () {
     def iterations = selectList.size
+	//println "interaction ${iterations}"
     println "Client $clientNumber has $iterations values in $selectList"
 	
     for ( i in 0 ..< iterations) {
       def key = selectList[i]
+	  println "key ${key}"
       requestChannel.write(key)
+	  //println "yo"
       def v = receiveChannel.read()
+	  println "v ${v}"
     }
 	
     println "Client $clientNumber has finished"

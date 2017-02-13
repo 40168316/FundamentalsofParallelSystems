@@ -15,7 +15,7 @@ class Server implements CSProcess{
   def ChannelInput thisServerReceive  
   def ChannelInput otherServerRequest
   def ChannelOutput otherServerSend  
-  def dataMap = [ : ]    
+  Map dataMap = [ : ]    
                 
   void run () {
     def CLIENT = 0
@@ -26,7 +26,6 @@ class Server implements CSProcess{
 							  thisServerReceive])
     while (true) {
       def index = serverAlt.select()
-	  
       switch (index) {		  
         case CLIENT :
           def key = clientRequest.read()
